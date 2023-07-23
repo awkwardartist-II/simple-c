@@ -7,6 +7,16 @@ const char ShortOpt[] = {
     'o', 0
 };
 
+int ArgShort(char *Arg) {
+    int Len;
+
+    Len = strlen(Arg);
+    if(Len == 2 && *Arg == '-') {
+        return 1;
+    }
+    return 0;
+}
+
 int ValidArg(char *Arg) {
     int Long;
     char *Opt;
@@ -33,9 +43,9 @@ int ValidArg(char *Arg) {
 
 void ParseArgs(int argc, char **argv) {
     char *Arg;
+    int Short;
 
     for(int i=1; i < argc; ++i) {
         Arg = argv[i];
-        
     }
 }
