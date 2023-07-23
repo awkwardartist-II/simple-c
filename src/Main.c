@@ -2,8 +2,8 @@
 #include <string.h>
 
 #include "Args.h"
+#include "Source.h"
 
-FILE *Input;
 
 int main(int argc, char **argv) {
     char *InputPath;
@@ -12,11 +12,12 @@ int main(int argc, char **argv) {
         return 0;
     }
     InputPath = argv[1];
-    Input = fopen(InputPath,"r");
 
-    if(!Input) {
+    if(!OpenSource(InputPath)) {
         printf("Error opening \'%s\'.\n");
         return -1;
     }
+
+    CloseSource();
     return 0;
 }
