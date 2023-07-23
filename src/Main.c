@@ -4,7 +4,6 @@
 #include "Args.h"
 #include "Source.h"
 
-
 int main(int argc, char **argv) {
     char *InputPath;
 
@@ -17,7 +16,9 @@ int main(int argc, char **argv) {
         printf("Error opening \'%s\'.\n");
         return -1;
     }
-
+    LoadSource();
     CloseSource();
+
+
     return 0;
 }

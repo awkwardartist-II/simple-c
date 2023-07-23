@@ -37,10 +37,15 @@ void LoadSource() {
     int LineNum;
 
     LineNum = GetLineCount();
-    Lines = malloc(sizeof(char*)*LineNum);
+    if(!LineNum) {
+        printf("Empty source file.\n");
+        exit(-1);
+    }
 
+    Lines = malloc(sizeof(char*)*LineNum);
     for(int i = 0; i < LineNum; ++i) {
         Lines[i] = ReadLine();
+        printf("%s\n",Lines[i]);
     }
 }
 
